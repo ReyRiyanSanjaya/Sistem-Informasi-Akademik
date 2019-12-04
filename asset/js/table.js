@@ -95,7 +95,7 @@ function default_index() {
     });
 }
 
-// All Table search script
+// semua tabel fi filter
 function FilterkeyWord_all_table() {
 
     // Count td if you want to search on all table instead of specific column
