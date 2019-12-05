@@ -238,10 +238,6 @@ a#tombol-tambah:hover {
 
 /* ======================================== */
 
-body {
-    background-color: #eee;
-}
-
 table th,
 table td {
     text-align: center;
@@ -287,10 +283,6 @@ li.pager.active {
     margin-top: -28px;
 }
 
-.header_wrap {
-    padding: 30px 0;
-}
-
 .num_rows {
     width: 20%;
     float: left;
@@ -311,4 +303,17 @@ li.pager.active {
     float: right;
     text-align: right;
     color: #999;
+}
+
+div>thead.thead-table {
+    background-color: teal;
+}
+
+footer {
+    width: 100%;
+    height: 20vh;
+    background-color: #54b9cd;
+    position: relative;
+    z-index: 1;
+    top: 90%;
 }
