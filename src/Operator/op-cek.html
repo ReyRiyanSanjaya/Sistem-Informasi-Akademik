@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../asset/css/dashboard.css">
     <link rel="stylesheet" href="../../asset/bs/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../asset/fontawesome/css/fontawesome.min.css">
+    <script src="../../asset/js/jquery2-1.min.js"></script>
 </head>
 
 <body>
@@ -73,40 +74,117 @@
                                   <option>2018</option>
                                   <option>2019</option>
                                 </select>
-                                <button class="btn bg-dark mt-2" style="color: aliceblue;">Print    </button>
-                                <button class="btn bg-dark mt-2" style="color: aliceblue;">Tampikan    </button>
+                                <button class="btn bg-info mt-2" style="color: aliceblue;">Print    </button>
+                                <button class="btn bg-info mt-2" style="color: aliceblue;">Tampikan    </button>
                               </div>
-                              <table class="table">
-                                <thead class="thead bg-info">
-                                  <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">First</th>
-                                    <th scope="col">Last</th>
-                                    <th scope="col">Handle</th>
-                                  </tr>
+                              <!-- akhir dari form-group -->
+                              <div class="header_wrap">
+                                <div class="num_rows">
+                                    <div class="form-group"> 	
+                                        <!--		menampilkan baris 		-->
+                                           <select class  ="form-control" name="state" id="maxRows">
+                                                <option value="10">10</option>
+                                                <option value="15">15</option>
+                                                <option value="20">20</option>
+                                                <option value="50">50</option>
+                                                <option value="70">70</option>
+                                                <option value="100">100</option>
+                                                <option value="5000">Show ALL Rows</option>
+                                            </select>
+                                    </div>
+                              </div>
+                            <div class="tb_search">
+                                <input type="text" id="search_input_all" onkeyup="FilterkeyWord_all_table()" placeholder="Search.." class="form-control">
+                            </div>
+                            </div>
+                            <table class="table table-info" id= "table-id">
+                                <thead class="thead-table">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Date</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                  <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            <!-- akhir dari table  -->
+                                    <tr>
+                                        <td>Cruz Collier</td>
+                                        <td>Integer.mollis@metusIn.org</td>
+                                        <td>1-277-210-6159</td>
+                                        <td>Feb 2, 2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cruz Collier</td>
+                                        <td>Integer.mollis@metusIn.org</td>
+                                        <td>1-277-210-6159</td>
+                                        <td>Feb 2, 2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cruz Collier</td>
+                                        <td>Integer.mollis@metusIn.org</td>
+                                        <td>1-277-210-6159</td>
+                                        <td>Feb 2, 2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cruz Collier</td>
+                                        <td>Integer.mollis@metusIn.org</td>
+                                        <td>1-277-210-6159</td>
+                                        <td>Feb 2, 2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cruz Collier</td>
+                                        <td>Integer.mollis@metusIn.org</td>
+                                        <td>1-277-210-6159</td>
+                                        <td>Feb 2, 2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ayam Collier</td>
+                                        <td>Integer.mollis@metusIn.org</td>
+                                        <td>1-277-210-6159</td>
+                                        <td>Feb 2, 2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cruz Collier</td>
+                                        <td>Integer.mollis@metusIn.org</td>
+                                        <td>1-277-210-6159</td>
+                                        <td>Feb 2, 2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cruz Collier</td>
+                                        <td>Integer.mollis@metusIn.org</td>
+                                        <td>1-277-210-6159</td>
+                                        <td>Feb 2, 2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cruz Collier</td>
+                                        <td>Integer.mollis@metusIn.org</td>
+                                        <td>1-277-210-6159</td>
+                                        <td>Feb 2, 2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cruz Collier</td>
+                                        <td>Integer.mollis@metusIn.org</td>
+                                        <td>1-277-210-6159</td>
+                                        <td>Feb 2, 2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cruz Collier</td>
+                                        <td>Integer.mollis@metusIn.org</td>
+                                        <td>1-277-210-6159</td>
+                                        <td>Feb 2, 2017</td>
+                                    </tr>
+                                <tbody>
+                            </table>
+                            <!--Tampilkan Pagination -->
+                            <div class='pagination-container'>
+                                <nav>
+                                    <ul class="pagination">
+                                     <!--disini JS menambahkan row--> -->
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="rows_count">menampilkan 1000 data</div>
+                        <!-- akhir dari header_wrap  -->
                         </div>
                     </div>
                     <!-- akhir dari card pemberitahuan -->
@@ -116,6 +194,7 @@
             
             
     <script src="../../asset/bs/js/bootstrap.min.js"></script>
+    <script src="../../asset/js/table.js"></script>
     <script src="../../asset/fontawesome/js/all.min.js"></script>
 </body>
 
