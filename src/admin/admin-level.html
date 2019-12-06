@@ -67,7 +67,49 @@
                         <div class="tabel-body">
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Pilih untuk Menampilkan pengguna sistem</label>
-                                <button class="btn bg-primary float-right mb-2"><a id="tombol-tambah" href="">Tambah Data</a></button>
+                                <button type="button" class="btn bg-primary float-right mb-2"><a id="tombol-tambah" data-toggle="modal" data-target="#modal-tambah">Tambah Data</a></button>
+                                <!-- button tambah data  -->
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-tambah" tabindex="-1" role="dialog" aria-labelledby="tambah Data" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title font-weight-bolder">Tambah Data Mahasiswa</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- conten modal   -->
+                                            <form>
+                                                <div class="form-group">
+                                                  <label for="formGroupExampleInput">Nama</label>
+                                                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Mahasiswa">
+                                                </div>
+                                                <div class="form-group">                                        <label for="formGroupExampleInput2">Status</label>
+                                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Level Saat ini">
+                                                </div>
+                                                <div class="input-group mb-3 mt-4">
+                                                    <div class="input-group-prepend">
+                                                        <label class="input-group-text" for="inputGroupSelect01">Level</label>
+                                                    </div>
+                                                    <select class="custom-select" id="inputGroupSelect01">
+                                                      <option value="1">Admin</option>
+                                                      <option value="2">Opeator</option>
+                                                      <option value="3">Mahasiswa</option>
+                                                    </select>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary text-align-center" data-dismiss="modal">Batal</button>
+                                        <button type="button" class="btn btn-primary">Simpan</button>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <!-- akhir dari modal  -->
                                 <select class="form-control" id="exampleFormControlSelect1">
                                   <option>Operator</option>
                                   <option>Mahasiswa</option>
@@ -99,77 +141,65 @@
                                 <thead class="thead-table">
                                     <tr>
                                         <th>Nama</th>
-                                        <th>Prodi</th>
-                                        <th>No.HP</th>
-                                        <th>Alamat</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>muhammad reza</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Tembung</td>
+                                        <td>Operator</td>
+                                        <td class="td"><a href="" class="btn btn-primary ml-5 mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>Operator</td>
+                                        <td class="td"><a href="" class="btn btn-primary ml-5 mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>Operator</td>
+                                        <td class="td"><a href="" class="btn btn-primary ml-5 mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>Operator</td>
+                                        <td class="td"><a href="" class="btn btn-primary ml-5 mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>Operator</td>
+                                        <td class="td"><a href="" class="btn btn-primary ml-5 mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>Operator</td>
+                                        <td class="td"><a href="" class="btn btn-primary ml-5 mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>Operator</td>
+                                        <td class="td"><a href="" class="btn btn-primary ml-5 mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>Operator</td>
+                                        <td class="td"><a href="" class="btn btn-primary ml-5 mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>Operator</td>
+                                        <td class="td"><a href="" class="btn btn-primary ml-5 mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>Operator</td>
+                                        <td class="td"><a href="" class="btn btn-primary ml-5 mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>Operator</td>
+                                        <td class="td"><a href="" class="btn btn-primary ml-5 mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                 <tbody>
                             </table>

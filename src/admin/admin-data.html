@@ -67,7 +67,44 @@
                         <div class="tabel-body">
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Pilih Program Studi</label>
-                                <button class="btn bg-primary float-right mb-2"><a id="tombol-tambah" href="">Tambah Data</a></button>
+                                <button type="button" class="btn bg-primary float-right mb-2"><a id="tombol-tambah" data-toggle="modal" data-target="#modal-tambah">Tambah Data</a></button>
+                                <!-- button tambah data  -->
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-tambah" tabindex="-1" role="dialog" aria-labelledby="tambah Data" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title font-weight-bolder">Tambah Data Mahasiswa</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- conten modal   -->
+                                            <form>
+                                                <div class="form-group">
+                                                  <label for="formGroupExampleInput">Nama</label>
+                                                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nama Mahasiswa">
+                                                </div>
+                                                <div class="form-group">                                        <label for="formGroupExampleInput2">Program Studi</label>
+                                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Program Studi">
+                                                </div>
+                                                <div class="form-group">                                        <label for="formGroupExampleInput2">NPM</label>
+                                                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="NPM Mahasiswa">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary text-align-center" data-dismiss="modal">Batal</button>
+                                        <button type="button" class="btn btn-primary">Simpan</button>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <!-- akhir dari modal  -->
+
+                                <!-- input grup  -->
                                 <select class="form-control" id="exampleFormControlSelect1">
                                   <option>Informatika</option>
                                   <option>Mesin</option>
