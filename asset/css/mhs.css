@@ -10,6 +10,7 @@ body {
     background-color: #fcfcfc;
     margin: 0;
     padding: 0;
+    transition: all 0.5s ease-out;
 }
 
 header {
@@ -96,31 +97,46 @@ p {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: rgb(31, 16, 16, 0.5);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
 }
 
-.sidenav a {
+.sidenav a.menu-sidebar {
     padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    font-size: 3rem;
+    color: aliceblue;
+    margin-top: 10px;
     display: block;
     transition: 0.3s;
+    text-decoration-line: none !important;
+    font-weight: bolder;
+    transition: all 0.5s ease-in-out;
 }
 
-.sidenav a:hover {
-    color: #f1f1f1;
+.sidenav a.menu-sidebar:hover {
+    color: teal;
+    transform: scale(1.1) translateX(-25px);
 }
 
-.sidenav .closebtn {
+.sidenav #closebtn {
     position: absolute;
     top: 0;
-    right: 25px;
-    font-size: 36px;
+    right: 35px;
+    font-size: 50px;
     margin-left: 50px;
+    transition: all 0.5s ease-in-out;
+    text-decoration-line: none !important;
+    color: thistle;
+    font-weight: bolder;
+}
+
+.sidenav #closebtn:hover {
+    transform: scale(1.7) rotate(90deg);
+    color: turquoise;
 }
 
 #main {
@@ -142,23 +158,103 @@ span#btn-side {
     position: absolute;
     font-size: 70px;
     top: 10px;
-    left: 84%;
+    left: 80%;
     color: silver;
 }
 
+footer {
+    border-top-left-radius: 40%;
+    border-top-right-radius: 40%;
+    text-align: center;
+}
 
-/* akhir dari pembuatan sidebar  */
-
-.sticky {
-    position: fixed !important;
-    top: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-bottom-color: 2px #2b2b2b;
-    z-index: 9999;
-    transition: all 1.5s ease;
-    box-shadow: 1px 2px 50px 0px rgba(0, 0, 0, 0.85);
+div.text-content {
+    height: 10%;
+    padding: 5%;
+    text-align: center;
 }
 
 
-/* akhir dari stickybar  */
+/* =============================================== */
+
+h1#footer# {
+    cursor: default;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
+h1#footer span {
+    position: relative;
+    top: 20px;
+    display: inline-block;
+    -webkit-animation: bounce 0.3s ease infinite alternate;
+    font-size: 100px;
+    color: #fff;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent, 0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+h1#footer span:nth-child(2) {
+    -webkit-animation-delay: 0.1s;
+}
+
+h1#footer span:nth-child(3) {
+    -webkit-animation-delay: 0.2s;
+}
+
+h1#footer span:nth-child(4) {
+    -webkit-animation-delay: 0.3s;
+}
+
+h1#footer span:nth-child(5) {
+    -webkit-animation-delay: 0.4s;
+}
+
+h1#footer span:nth-child(6) {
+    -webkit-animation-delay: 0.5s;
+}
+
+h1#footer span:nth-child(7) {
+    -webkit-animation-delay: 0.6s;
+}
+
+h1#footer span:nth-child(8) {
+    -webkit-animation-delay: 0.2s;
+}
+
+h1#footer span:nth-child(9) {
+    -webkit-animation-delay: 0.3s;
+}
+
+h1#footer span:nth-child(10) {
+    -webkit-animation-delay: 0.4s;
+}
+
+h1#footer span:nth-child(11) {
+    -webkit-animation-delay: 0.5s;
+}
+
+h1#footer span:nth-child(12) {
+    -webkit-animation-delay: 0.6s;
+}
+
+h1#footer span:nth-child(13) {
+    -webkit-animation-delay: 0.7s;
+}
+
+
+/* ANIMATION */
+
+@-webkit-keyframes bounce {
+    100% {
+        top: -20px;
+        text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc, 0 50px 25px rgba(0, 0, 0, 0.2);
+    }
+}

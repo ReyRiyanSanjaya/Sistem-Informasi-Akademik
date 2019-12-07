@@ -24,30 +24,27 @@
             <div class="nav">
                 <div class="container">
                 <img src="../../asset/gambar/admin2.png" id="photo"/>
-                <h3 class="text-center">ADMIN</h3><hr class="garis-dipoto">
+                <h3 class="text-center">Operator</h3><hr class="garis-dipoto">
             </div>
             <div class="menu mt-1">
                 <div class="list-group-menu">
                   <a href="index.html" class="list-group-item list-group-item-action">
                     <i class="fa fa-home fa-2x"> </i> Dashboard
                   </a>
-                  <a href="admin-data.html" class="list-group-item list-group-item-action">
+                  <a href="op-data.html" class="list-group-item list-group-item-action">
                      Data Mahasiswa
                   </a>
-                  <a href="admin-pjg.html" class="list-group-item list-group-item-action">
+                  <a href="op-pjg.html" class="list-group-item list-group-item-action">
                      Proses Jam Ganti
                   </a>
-                  <a href="admin-cl.html" class="list-group-item list-group-item-action">
+                  <a href="op-cl.html" class="list-group-item list-group-item-action">
                       Cetak Laporan
                   </a>
                   <a href="#" class="list-group-item list-group-item-action active">
                       Kelolah Ruangan
                   </a>
-                  <a href="admin-cek.html" class="list-group-item list-group-item-action">
+                  <a href="op-cek.html" class="list-group-item list-group-item-action">
                       Cek Ruangan
-                  </a>
-                  <a href="admin-level.html" class="list-group-item list-group-item-action">
-                      Kelola Level User
                   </a>
                 </div>
             </div>
@@ -62,23 +59,57 @@
                 <div class="row">
                     <div class="tabel-data">
                         <div class="tabel-header bg-info">
-                            <h3 id="nama-tabel">Data Mahasiswa</h3>
+                            <h3 id="nama-tabel">Kelola Ruangan</h3>
                         </div>
                         <div class="tabel-body">
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1">Pilih Program Studi</label>
-                                <button class="btn bg-primary float-right mb-2"><a id="tombol-tambah" href="">Tambah Data</a></button>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                  <option>Informatika</option>
-                                  <option>Mesin</option>
-                                  <option>Elektro</option>
-                                  <option value="">Sipil</option>
-                                  <option value="">Arsitek</option>
-                                </select>
-                                <button class="btn bg-info mt-2" style="color: aliceblue;">Print    </button>
-                                <button class="btn bg-info mt-2" style="color: aliceblue;">Tampikan    </button>
-                              </div>
+                                <button type="button" class="btn bg-primary"><a id="tombol-tambah" data-toggle="modal" data-target="#modal-tambah">Tambah Ruangan</a></button>
+                                    <!-- button tambah data  -->
+
+                            </div>
                               <!-- akhir dari form-group -->
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-tambah" tabindex="-1" role="dialog" aria-labelledby="tambah Data" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title font-weight-bolder">Tambah Ruangan</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- conten modal   -->
+                                            <form>
+                                                <div class="form-group">
+                                                  <label for="formGroupExampleInput">Kode Ruangan</label>
+                                                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Kode Ruangan">
+                                                </div>
+                                                <div class="form-group">                                        <label for="formGroupExampleInput2">Deksripsi Ruangan</label>
+                                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Deksripsi Ruangan">
+                                                </div>
+                                                <div class="form-group">                                        <label for="formGroupExampleInput2">Mata Kuliah</label>
+                                                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Mata Kuliah">
+                                                </div>
+                                                <div class="form-group">                                        <label for="formGroupExampleInput2">Dosen Pengajar</label>
+                                                    <input type="text" class="form-control" 
+                                                    id="formGroupExampleInput2" placeholder="Dosen Pengajar">
+                                                </div>
+                                                <div class="form-group">                                        <label for="formGroupExampleInput2">Waktu</label>
+                                                    <input type="text" class="form-control" 
+                                                    id="formGroupExampleInput2" placeholder="Waktu">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary text-align-center" data-dismiss="modal">Batal</button>
+                                        <button type="button" class="btn btn-primary">Simpan</button>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <!-- akhir dari modal  -->
                               <div class="header_wrap">
                                 <div class="num_rows">
                                     <div class="form-group"> 	
@@ -87,10 +118,6 @@
                                                 <option value="10">10</option>
                                                 <option value="15">15</option>
                                                 <option value="20">20</option>
-                                                <option value="50">50</option>
-                                                <option value="70">70</option>
-                                                <option value="100">100</option>
-                                                <option value="5000">Show ALL Rows</option>
                                             </select>
                                     </div>
                               </div>
@@ -101,78 +128,102 @@
                             <table class="table table-info" id= "table-id">
                                 <thead class="thead-table">
                                     <tr>
-                                        <th>Nama</th>
-                                        <th>Prodi</th>
-                                        <th>No.HP</th>
-                                        <th>Alamat</th>
+                                        <th>Kode Ruangan</th>
+                                        <th>Ruangan</th>
+                                        <th>Mata Kuliah</th>
+                                        <th>Dosen</th>
+                                        <th>Waktu</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>muhammad reza</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Tembung</td>
+                                        <td>sg-001</td>
+                                        <td>sg lantai 2 ruangan AI</td>
+                                        <td>Basis Data</td>
+                                        <td>Juanda Hakim</td>
+                                        <td>08:00</td>
+                                        <td class="td"><a href="" class="btn btn-primary mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
-                                        <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>sg-001</td>
+                                        <td>sg lantai 2 ruangan AI</td>
+                                        <td>Basis Data</td>
+                                        <td>Juanda Hakim</td>
+                                        <td>08:00</td>
+                                        <td class="td"><a href="" class="btn btn-primary mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
-                                        <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>sg-001</td>
+                                        <td>sg lantai 2 ruangan AI</td>
+                                        <td>Basis Data</td>
+                                        <td>Juanda Hakim</td>
+                                        <td>08:00</td>
+                                        <td class="td"><a href="" class="btn btn-primary mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
-                                        <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>sg-001</td>
+                                        <td>sg lantai 2 ruangan AI</td>
+                                        <td>Basis Data</td>
+                                        <td>Juanda Hakim</td>
+                                        <td>08:00</td>
+                                        <td class="td"><a href="" class="btn btn-primary mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
-                                        <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>sg-001</td>
+                                        <td>sg lantai 2 ruangan AI</td>
+                                        <td>Basis Data</td>
+                                        <td>Juanda Hakim</td>
+                                        <td>08:00</td>
+                                        <td class="td"><a href="" class="btn btn-primary mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
-                                        <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>sg-001</td>
+                                        <td>sg lantai 2 ruangan AI</td>
+                                        <td>Basis Data</td>
+                                        <td>Juanda Hakim</td>
+                                        <td>08:00</td>
+                                        <td class="td"><a href="" class="btn btn-primary mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
-                                        <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>sg-001</td>
+                                        <td>sg lantai 2 ruangan AI</td>
+                                        <td>Basis Data</td>
+                                        <td>Juanda Hakim</td>
+                                        <td>08:00</td>
+                                        <td class="td"><a href="" class="btn btn-primary mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
-                                        <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>sg-001</td>
+                                        <td>sg lantai 2 ruangan AI</td>
+                                        <td>Basis Data</td>
+                                        <td>Juanda Hakim</td>
+                                        <td>08:00</td>
+                                        <td class="td"><a href="" class="btn btn-primary mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
-                                        <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>sg-001</td>
+                                        <td>sg lantai 2 ruangan AI</td>
+                                        <td>Basis Data</td>
+                                        <td>Juanda Hakim</td>
+                                        <td>08:00</td>
+                                        <td class="td"><a href="" class="btn btn-primary mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
-                                        <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>sg-001</td>
+                                        <td>sg lantai 2 ruangan AI</td>
+                                        <td>Basis Data</td>
+                                        <td>Juanda Hakim</td>
+                                        <td>08:00</td>
+                                        <td class="td"><a href="" class="btn btn-primary mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                     <tr>
-                                        <td>Riyan Sanjaya</td>
-                                        <td>Teknik Informatika</td>
-                                        <td>082186958535</td>
-                                        <td>Jalanin aja ampe nyerah</td>
+                                        <td>sg-002</td>
+                                        <td>sg lantai 2 ruangan Kecerdasan Buatan</td>
+                                        <td>Algoritma</td>
+                                        <td>Risky Muliono</td>
+                                        <td>08:00</td>
+                                        <td class="td"><a href="" class="btn btn-primary mr-1">edit <i class="fas fa-user-edit"></i></a><a href="" class="btn btn-danger mr-5">Hapus<i class="fas fa-user-slash ml-1"></i></a></td>
                                     </tr>
                                 <tbody>
                             </table>

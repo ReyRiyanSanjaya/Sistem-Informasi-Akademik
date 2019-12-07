@@ -1,11 +1,3 @@
-$(window).on('scroll', function() {
-    if ($(window).scrollTop()) {
-        $('nav').addClass('sticky');
-    } else {
-        $('nav').removeClass('sticky');
-    }
-});
-// akhir dari nab sticky
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";

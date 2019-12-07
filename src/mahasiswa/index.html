@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Halaman Home</title>
     <link rel="stylesheet" href="../../asset/css/mhs.css">
+    <link rel="stylesheet" href="../../asset/bs/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../asset/css/dashboard.css">
+    <link rel="stylesheet" href="../../asset/fontawesome/css/all.min.css">
     <script src="../../asset/js/jquery2-1.min.js"></script>
 </head>
 
@@ -14,7 +17,7 @@
 
 
 
-    <header>
+    <header id="home">
 
         <span id="btn-side" onclick="openNav()">&#9776; open</span>
         <!-- Video from coverr.co -->
@@ -28,11 +31,13 @@
 
         <nav>
             <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Clients</a>
-                <a href="#">Contact</a>
+                <a href="javascript:void(0)" id="closebtn" onclick="closeNav()">&times;</a>
+                <h3 id="sidebar-nama" style="text-align: center; color: antiquewhite; font-size: 3rem; font-weight: bolder;">Riyan Sanjaya</h3>
+                <img src="../../asset/gambar/admin2.png" alt="" style="height: 100px; width: 100px; margin-left:60px; margin-top: 10px;">
+                <a class="menu-sidebar" href="#home">Home</a>
+                <a class="menu-sidebar" href="#cek">cek Ruangan</a>
+                <a class="menu-sidebar" href="#footer">footer</a>
+                <a class="menu-sidebar" href="#">Logout</a>
             </div>
         </nav>
     </header>
@@ -41,80 +46,178 @@
 
         <div class="wrapper">
             <section id='cek'>
-                <h2> This is some steezy stuff</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum! Lorem
-                    ipsum dolor sit amet, consectetur adipisicing elit. Ex libero cupiditate deserunt earum, fuga, ab labore esse animi, nihil est tenetur non delectus perferendis. Maxime accusamus ea rem sint at!</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum! Lorem
-                    ipsum dolor sit amet, consectetur adipisicing elit. A ut aspernatur omnis neque iusto. Veritatis rem ad atque optio perferendis. Dolorum qui consequatur, repellat soluta impedit porro totam molestiae sit.</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum! Lorem
-                    ipsum dolor sit amet, consectetur adipisicing elit. Possimus iusto, omnis quas, rem minus cupiditate, sunt voluptates minima sint nemo ipsa itaque consequatur dolor, quam necessitatibus vitae. Quod, eaque, quam.</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
+                <div class="container-table mt-2">
+                    <div class="row">
+                        <div class="tabel-data">
+                            <div class="tabel-header bg-info">
+                                <h3 id="nama-tabel">Cek Ruangan</h3>
+                            </div>
+                            <div class="tabel-body">
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Pilih Mata Kuliah</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                      <option>Teknik Informatika</option>
+                                      <option>Teknik Industri</option>
+                                      <option>Teknik Sipil</option>
+                                      <option>Teknik Elektro</option>
+                                      <option value="">Teknik Mesin</option>
+                                      <option value="">Arsitek</option> 
+                                    </select>
+                                    <button class="btn bg-info mt-2" style="color: aliceblue;">Print    </button>
+                                    <button class="btn bg-info mt-2" style="color: aliceblue;">Tampikan    </button>
+                                </div>
+                                <!-- akhir dari form-group -->
+                                <div class="header_wrap">
+                                    <div class="num_rows">
+                                        <div class="form-group">
+                                            <!--		menampilkan baris 		-->
+                                            <select class="form-control" name="state" id="maxRows">
+                                                    <option value="10">10</option>
+                                                    <option value="15">15</option>
+                                                    <option value="20">20</option>
+                                                    <option value="50">50</option>
+                                                    <option value="70">70</option>
+                                                    <option value="100">100</option>
+                                                    <option value="5000">Show ALL Rows</option>
+                                                </select>
+                                        </div>
+                                    </div>
+                                    <div class="tb_search">
+                                        <input type="text" id="search_input_all" onkeyup="FilterkeyWord_all_table()" placeholder="Search.." class="form-control">
+                                    </div>
+                                </div>
+                                <table class="table table-info" id="table-id">
+                                    <thead class="thead-table">
+                                        <tr>
+                                            <th>Kode Ruangan</th>
+                                            <th>Kode MK</th>
+                                            <th>Mata Kuliah</th>
+                                            <th>Dosen</th>
+                                            <th>Waktu</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>sg-001</td>
+                                            <td>TI-001</td>
+                                            <td>Basis Data</td>
+                                            <td>Juanda Hakim</td>
+                                            <td>08:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>sg-001</td>
+                                            <td>TI-001</td>
+                                            <td>Basis Data</td>
+                                            <td>Juanda Hakim</td>
+                                            <td>08:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>sg-001</td>
+                                            <td>TI-001</td>
+                                            <td>Basis Data</td>
+                                            <td>Juanda Hakim</td>
+                                            <td>08:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>sg-001</td>
+                                            <td>TI-001</td>
+                                            <td>Basis Data</td>
+                                            <td>Juanda Hakim</td>
+                                            <td>08:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>sg-001</td>
+                                            <td>TI-001</td>
+                                            <td>Basis Data</td>
+                                            <td>Juanda Hakim</td>
+                                            <td>08:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>sg-001</td>
+                                            <td>TI-001</td>
+                                            <td>Basis Data</td>
+                                            <td>Juanda Hakim</td>
+                                            <td>08:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>sg-001</td>
+                                            <td>TI-001</td>
+                                            <td>Basis Data</td>
+                                            <td>Juanda Hakim</td>
+                                            <td>08:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>sg-001</td>
+                                            <td>TI-001</td>
+                                            <td>Basis Data</td>
+                                            <td>Juanda Hakim</td>
+                                            <td>08:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>sg-001</td>
+                                            <td>TI-001</td>
+                                            <td>Basis Data</td>
+                                            <td>Juanda Hakim</td>
+                                            <td>08:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>sg-001</td>
+                                            <td>TI-001</td>
+                                            <td>Basis Data</td>
+                                            <td>Juanda Hakim</td>
+                                            <td>08:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>sg-002</td>
+                                            <td>sg lantai 2 ruangan Kecerdasan Buatan</td>
+                                            <td>Algoritma</td>
+                                            <td>Risky Muliono</td>
+                                            <td>08:00</td>
+                                        </tr>
+                                        <tbody>
+                                </table>
+                                <!--Tampilkan Pagination -->
+                                <div class='pagination-container'>
+                                    <nav>
+                                        <ul class="pagination">
+                                            <!--disini JS menambahkan row-->-->
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="rows_count">menampilkan 1000 data</div>
+                                <!-- akhir dari header_wrap  -->
+                            </div>
+                        </div>
+                        <!-- akhir dari card pemberitahuan -->
+                    </div>
+                </div>
+                <!-- akhir dari konten tabel -->
             </section>
 
-            <section id='satu'>
-                <h2> Keepin' it real</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum enim sunt delectus, reiciendis omnis laudantium animi, et nulla quidem, aliquam aliquid. A consectetur deleniti voluptates eius neque, voluptate voluptatibus nostrum!</p>
-
-            </section>
-
-            <footer>
-
-            </footer>
         </div>
-
     </main>
+    <footer id="footer">
+        <h1 id="footer">
+            <span>M</span>
+            <span>a</span>
+            <span>h</span>
+            <span>a</span>
+            <span>s</span>
+            <span>i</span>
+            <span>s</span>
+            <span>w</span>
+            <span>a</span>
+            <span><i class="fas fa-smile-wink"></i></span>
+            <span>U</span>
+            <span>M</span>
+            <span>A</span>
+        </h1 id="footer">
+    </footer>
 
     <script src="../../asset/js/mhs.js"></script>
-    <!-- Code injected by live-server -->
-    <script type="text/javascript">
-        // <![CDATA[  <-- For SVG support
-        if ('WebSocket' in window) {
-            (function() {
-                function refreshCSS() {
-                    var sheets = [].slice.call(document.getElementsByTagName("link"));
-                    var head = document.getElementsByTagName("head")[0];
-                    for (var i = 0; i < sheets.length; ++i) {
-                        var elem = sheets[i];
-                        var parent = elem.parentElement || head;
-                        parent.removeChild(elem);
-                        var rel = elem.rel;
-                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-                        }
-                        parent.appendChild(elem);
-                    }
-                }
-                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-                var address = protocol + window.location.host + window.location.pathname + '/ws';
-                var socket = new WebSocket(address);
-                socket.onmessage = function(msg) {
-                    if (msg.data == 'reload') window.location.reload();
-                    else if (msg.data == 'refreshcss') refreshCSS();
-                };
-                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-                    console.log('Live reload enabled.');
-                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-                }
-            })();
-        } else {
-            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-        }
-        // ]]>
-    </script>
+    <script src="../../asset/js/table.js"></script>
+    <script src="../../asset/bs/js/bootstrap.min.js"></script>
+    <script src="../../asset/fontawesome/js/all.min.js"></script>
 </body>
 
 </html>
