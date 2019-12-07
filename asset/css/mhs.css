@@ -25,8 +25,8 @@ header {
     min-width: 100%;
     min-height: 100%;
     object-fit: cover;
-    z-index: -1;
     background-attachment: fixed;
+    z-index: -1;
 }
 
 .video-bg::-webkit-media-controls {
@@ -39,7 +39,6 @@ header {
     justify-content: center;
     align-content: center;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.55);
 }
 
 h1 {
@@ -99,7 +98,7 @@ p {
     left: 0;
     background-color: rgb(31, 16, 16, 0.5);
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: all 0.5s ease-in-out;
     padding-top: 60px;
     border-top-right-radius: 20%;
     border-bottom-right-radius: 20%;
@@ -158,8 +157,14 @@ span#btn-side {
     position: absolute;
     font-size: 70px;
     top: 10px;
-    left: 80%;
-    color: silver;
+    left: 93%;
+    color: rgba(160, 200, 245, 0.7);
+    transition: 0.5s ease-out;
+    text-shadow: 0.05em 0.05em rgba(0, 0, 0, 0.9);
+}
+
+span#btn-side:hover {
+    transform: rotate(90deg) scale(1.4);
 }
 
 footer {
